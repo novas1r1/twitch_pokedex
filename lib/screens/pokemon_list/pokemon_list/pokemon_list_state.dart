@@ -1,7 +1,6 @@
 part of 'pokemon_list_cubit.dart';
 
 enum PokemonListStatus {
-  initial,
   loading,
   loaded,
   error,
@@ -13,7 +12,7 @@ class PokemonListState extends Equatable {
   final String? errorMessage;
 
   const PokemonListState({
-    this.status = PokemonListStatus.initial,
+    this.status = PokemonListStatus.loading,
     this.data,
     this.errorMessage,
   });

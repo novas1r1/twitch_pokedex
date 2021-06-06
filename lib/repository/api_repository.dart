@@ -18,7 +18,7 @@ class ApiRepository {
     _httpClient = httpClient ?? http.Client();
   }
 
-  Future<PokemonResponse> fetchAllPokemon() async {
+  Future<List<Pokemon>> fetchAllPokemon() async {
     return _httpClient
         .get(Uri.https(
             pokeApiUrl, '${pokeApiBasePath}pokemon', {'limit': '151'}))
@@ -35,9 +35,10 @@ class ApiRepository {
           pokemonList.add(Pokemon.fromMap(pokemonMap));
         }
 
-        return SuccessPokemonListResponse(pokemonList);
+        return pokemonList;
       } else {
-        return ErrorResponse('Something went wrong');
+        return [];
+        //return ErrorResponse('Something went wrong');
       }
     });
   }

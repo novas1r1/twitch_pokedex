@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/repository/api_repository.dart';
+import 'repository/api_repository.dart';
 
 import 'screens/pokemon_list/pokemon_list_screen.dart';
 

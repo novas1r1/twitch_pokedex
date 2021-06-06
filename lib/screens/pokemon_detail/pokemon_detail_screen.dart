@@ -24,7 +24,9 @@ class PokemonDetailScreen extends StatelessWidget {
           apiRepository: RepositoryProvider.of<ApiRepository>(context))
         ..fetchPokemonDetails(pokemon.id),
       child: Scaffold(
-        appBar: AppBar(title: Text('#${pokemon.id} ${pokemon.name}')),
+        appBar: AppBar(
+          title: Text('#${pokemon.id} ${pokemon.name}'),
+        ),
         body: Column(
           children: [
             Hero(

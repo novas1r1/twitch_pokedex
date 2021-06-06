@@ -22,8 +22,9 @@ class PokemonListCubit extends Cubit<PokemonListState> {
     if (pokemonListResponse is SuccessPokemonListResponse) {
       emit(
         state.copyWith(
-            status: PokemonListStatus.loaded,
-            data: pokemonListResponse.pokemonList),
+          status: PokemonListStatus.loaded,
+          data: pokemonListResponse,
+        ),
       );
     } else {
       emit(state.copyWith(errorMessage: 'Something went wrong'));
